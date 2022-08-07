@@ -5,22 +5,18 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "digital": "nodemon digital-qr-to-gol",
-    "encode": "nodemon encode-qr",
-    "gol": "nodemon gol-main",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon",
+    "gol": "nodemon gol-standalone.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.19",
-    "patch-package": "^6.4.7"
+    "nodemon": "^2.0.19"
   },
   "dependencies": {
+    "patch-package": "^6.4.7",
     "image-decode": "^1.2.2",
-    "jsqr": "^1.4.0",
-    "png-js": "^1.0.0",
-    "qrcode": "^1.5.1"
+    "jsqr": "^1.4.0"
   },
   "postinstall": "patch-package"
 }
