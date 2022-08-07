@@ -1,0 +1,26 @@
+{
+  "name": "game-of-qr",
+  "version": "1.0.0",
+  "description": "Collect QR codes and turn them into artifical life",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "digital": "nodemon digital-qr-to-gol",
+    "encode": "nodemon encode-qr",
+    "gol": "nodemon gol-main",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "patch-package": "^6.4.7"
+  },
+  "dependencies": {
+    "image-decode": "^1.2.2",
+    "jsqr": "^1.4.0",
+    "png-js": "^1.0.0",
+    "qrcode": "^1.5.1"
+  },
+  "postinstall": "patch-package"
+}

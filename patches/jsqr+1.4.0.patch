@@ -1,0 +1,28 @@
+diff --git a/node_modules/jsqr/dist/index.d.ts b/node_modules/jsqr/dist/index.d.ts
+index d341eb7..b95ee89 100644
+--- a/node_modules/jsqr/dist/index.d.ts
++++ b/node_modules/jsqr/dist/index.d.ts
+@@ -1,6 +1,11 @@
+ import { Chunks } from "./decoder/decodeData";
+ import { Point } from "./locator";
+ export interface QRCode {
++    extractedMatrix: {
++        width: number;
++        height: number;
++        data: Uint8ClampedArray;
++    }
+     binaryData: number[];
+     data: string;
+     chunks: Chunks;
+diff --git a/node_modules/jsqr/dist/jsQR.js b/node_modules/jsqr/dist/jsQR.js
+index 429896a..b6483c8 100644
+--- a/node_modules/jsqr/dist/jsQR.js
++++ b/node_modules/jsqr/dist/jsQR.js
+@@ -339,6 +339,7 @@ function scan(matrix) {
+         var decoded = decoder_1.decode(extracted.matrix);
+         if (decoded) {
+             return {
++                extractedMatrix: extracted.matrix,
+                 binaryData: decoded.bytes,
+                 data: decoded.text,
+                 chunks: decoded.chunks,
